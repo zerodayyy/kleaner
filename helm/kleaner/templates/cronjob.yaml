@@ -10,9 +10,14 @@ spec:
       template:
         spec:
           containers:
-            - name: {{ .Chart.Name }}
-              image: zerodayyy/kleaner:{{ .Chart.Version }}
-              {{- if .Values.namespaces }}
-              args: ["--namespaces", {{ join "," .Values.namespaces | quote }}]
-              {{- end }}
-          restartPolicy: OnFailure
+            - name: "{{ .Chart.Name }}"
+              image: "zerodayyy/kleaner:{{ .Chart.AppVersion }}"
+              args:
+                {{- if .Values.debug }}
+                - "--debug"
+                {{- end }}
+                {{- if .Values.namespaces }}
+                - "--namespaces"
+                - {{ join "," .Values.namespaces | quote }}
+                {{- end }}
+          restartPolicy: Never
