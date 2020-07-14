@@ -21,3 +21,4 @@ spec:
                 - {{ join "," .Values.namespaces | quote }}
                 {{- end }}
           restartPolicy: Never
+          serviceAccountName: {{ .Chart.Name }}
