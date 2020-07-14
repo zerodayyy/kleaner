@@ -1,3 +1,2 @@
-interval: 5
-namespaces:
-  - default
+interval: 1
+# namespaces: []
