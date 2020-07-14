@@ -72,7 +72,7 @@ func main() {
 		for _, pod := range pods.Items {
 			strings.Contains(pod.Status.Reason, "Evicted")
 			log.Info("Pod", pod.Name, "will be deleted")
-			err := clientset.CoreV1().Pods(ns).Delete(context.TODO(), pod.Name, metav1.DeleteOptions{})
+			err := clientset.CoreV1().Pods(pod.Namespace).Delete(context.TODO(), pod.Name, metav1.DeleteOptions{})
 			if err != nil {
 				log.Error("Unable to delete pod", pod.Name)
 				log.Debug(err.Error())
