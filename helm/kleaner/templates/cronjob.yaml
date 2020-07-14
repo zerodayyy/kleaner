@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
             - name: "{{ .Chart.Name }}"
-              image: "zerodayyy/kleaner:{{ .Chart.AppVersion }}"
+              image: "zerodayyy/kleaner:{{ .Chart.Version }}"
               args:
                 {{- if .Values.debug }}
                 - "--debug"

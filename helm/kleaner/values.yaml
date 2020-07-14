@@ -1,2 +1,6 @@
-interval: 1
-# namespaces: []
+### How often to run the cleaner (interval in mins)
+interval: 15
+
+### Which namespaces to clean
+# namespaces:
+#   - default

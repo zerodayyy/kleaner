@@ -57,7 +57,7 @@ func main() {
 
 	for _, ns := range namespaces {
 		if ns != metav1.NamespaceAll {
-			log.Info("Cleaning namespace", ns)
+			log.Info("Cleaning namespace ", ns)
 		} else {
 			log.Info("Cleaning all namespaces")
 		}
@@ -71,15 +71,18 @@ func main() {
 
 		for _, pod := range pods.Items {
 			if strings.Contains(pod.Status.Reason, "Evicted") {
-				log.Info("Pod", pod.Name, "will be deleted")
+				log.Info("Pod ", pod.Name, " will be deleted")
 				err := clientset.CoreV1().Pods(pod.Namespace).Delete(context.TODO(), pod.Name, metav1.DeleteOptions{})
 				if err != nil {
-					log.Error("Unable to delete pod", pod.Name)
+					log.Error("Unable to delete pod ", pod.Name)
 					log.Debug(err.Error())
 					os.Exit(1)
 				}
-				log.Info("Pod", pod.Name, "deleted")
+				log.Info("Pod ", pod.Name, " has been deleted")
 			}
 		}
 	}
+
+	log.Info("Cleaning finished! Exiting...")
+	os.Exit(0)
 }
