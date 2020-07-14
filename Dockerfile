@@ -7,4 +7,4 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o kle
 
 FROM scratch
 COPY --from=0 /go/src/github.com/zerodayyy/kleaner/kleaner ./
-CMD ["/kleaner"]
+ENTRYPOINT ["/kleaner"]
