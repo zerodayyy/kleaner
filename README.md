@@ -2,6 +2,7 @@
 
 ![](https://img.shields.io/github/go-mod/go-version/zerodayyy/kleaner?style=flat-square)
 ![](https://img.shields.io/docker/cloud/build/zerodayyy/kleaner?style=flat-square)
+![](https://img.shields.io/docker/v/zerodayyy/kleaner?style=flat-square)
 
 A Kubernetes operator that deletes evicted pods
 
@@ -13,6 +14,7 @@ Sometimes an application can have a severe memory leak, which will cause it to c
 
 The heart of this tool is a small piece of Go code, which scans all namespaces for pods with `Evicted` in their status, and deletes them.
 This code is run as a Kubernetes CronJob.
+
 
 ### Installation
 
@@ -36,5 +38,5 @@ There are a few variables exposed through `values.yaml` file:
 
 ### Changelog
 
-##### v1.0.0 — *July 14, 2020*
+##### **`v1.0.0`** — *July 14, 2020*
 Initial release
