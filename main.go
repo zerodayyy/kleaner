@@ -41,7 +41,6 @@ func main() {
 		log.Debug(err.Error())
 		os.Exit(1)
 	}
-	log.Info("Wow! This is continuing!")
 	clientset, err := kubernetes.NewForConfig(config)
 	if err != nil {
 		log.Error("Unable to connect to Kubernetes")
