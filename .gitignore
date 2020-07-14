@@ -112,4 +112,4 @@ $RECYCLE.BIN/
 *.lnk
 
 ### Project binaries
-kleaner
+/kleaner
