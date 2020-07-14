@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: kube-system
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Chart.Name }}
+              image: docker.pkg.github.com/zerodayyy/kleaner/kleaner:{{ .Chart.Version }}
+              {{- if .Values.namespaces }}
+              args: ["--namespaces", {{ join "," .Values.namespaces | quote }}]
+              {{- end }}
