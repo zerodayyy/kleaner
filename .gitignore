@@ -1,5 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Go template
+### Go
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -16,7 +15,7 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-### macOS template
+### macOS
 # General
 .DS_Store
 .AppleDouble
@@ -44,7 +43,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### JetBrains template
+### JetBrains
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -71,7 +70,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-### Linux template
+### Linux
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -86,7 +85,7 @@ fabric.properties
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### Windows template
+### Windows
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
